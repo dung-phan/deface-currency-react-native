@@ -1,10 +1,11 @@
 const admin = require("firebase-admin");
 module.exports = function(req, res) {
+  //verify the user providing phone number
   if (!req.body.phone) {
-    return res.status(422).send({ error: "Bad input" });
+    return res.status(422).send({ error: "Bad Input" });
   }
   //format the phone number
-  const phone = String(req.body.phone).replace(/[^\d]/g, "");
+  const phone = String(req.body.phone);
 
   //create a new user using that phone number
 
