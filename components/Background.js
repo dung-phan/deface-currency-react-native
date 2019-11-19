@@ -1,7 +1,26 @@
 import React, { Component } from "react";
-import { View, Text, Image, StyleSheet, Dimensions } from "react-native";
-const { width, height } = Dimensions.get("window");
+import {
+  View,
+  Text,
+  Image,
+  StyleSheet,
+  Dimensions,
+  Animated,
+  TouchableHighlight
+} from "react-native";
+const { height } = Dimensions.get("window");
+
 class Background extends Component {
+  buttonOpacity = new Animated.Value(1);
+
+  bgY = new Animated.Value(0);
+
+  onChange = () => {
+    Animated.timing(this.bgY, {
+      toValue: -200
+    }).start();
+  };
+
   render() {
     return (
       <View
@@ -11,16 +30,28 @@ class Background extends Component {
           justifyContent: "flex-end"
         }}
       >
-        <View style={{ ...StyleSheet.absoluteFill }}>
+        <Animated.View
+          style={{
+            ...StyleSheet.absoluteFill
+          }}
+        >
           <Image
             source={require("../assets/image.jpg")}
             style={{ flex: 1, height: null, width: null }}
           />
-        </View>
-        <View style={{ height: height / 4.5 }}>
-          <View style={styles.button}>
-            <Text style={{ fontSize: 18, fontWeight: "bold" }}>SIGN IN</Text>
-          </View>
+        </Animated.View>
+        <View style={{ height: height / 4.5, justifyContent: "center" }}>
+          <TouchableHighlight onPress={this.onChange}>
+            <Animated.View
+              style={{
+                ...styles.button,
+                opacity: this.buttonOpacity,
+                transform: [{ translateY: this.bgY }]
+              }}
+            >
+              <Text style={{ fontSize: 20, fontWeight: "bold" }}>SIGN IN</Text>
+            </Animated.View>
+          </TouchableHighlight>
         </View>
       </View>
     );
