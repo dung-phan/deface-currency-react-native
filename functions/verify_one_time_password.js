@@ -1,11 +1,11 @@
 const admin = require("firebase-admin");
+
 module.exports = function(req, res) {
-  if (!res.body.phone || !req.body.code) {
-    return res
-      .status(422)
-      .send({ error: "Phone number and code must be provided" });
+  if (!req.body.phone || !req.body.code) {
+    return res.status(422).send({ error: "Phone and code must be provided" });
   }
-  const phone = String(req.body.phone).replace(/[^\d]/g, "");
+
+  const phone = String(req.body.phone);
   const code = parseInt(req.body.code);
 
   admin
@@ -16,9 +16,11 @@ module.exports = function(req, res) {
       ref.on("value", snapshot => {
         ref.off();
         const user = snapshot.val();
+
         if (user.code !== code || !user.codeValid) {
           return res.status(422).send({ error: "Code not valid" });
         }
+
         ref.update({ codeValid: false });
         admin
           .auth()
