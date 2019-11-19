@@ -1,8 +1,10 @@
 import React, { Component } from "react";
-import { Text, View } from "react-native";
+import { ScrollView, StyleSheet, Text, View } from "react-native";
 import Home from "./components/Home";
+import MainPage from "./components/MainPage";
+
 export default class App extends Component {
   render() {
-    return <Home />;
+    return <MainPage />;
   }
 }

@@ -14,12 +14,10 @@ function cacheImages(images) {
   });
 }
 export default class Home extends Component {
-  constructor() {
-    super();
-    this.state = {
-      isReady: false
-    };
-  }
+  state = {
+    isReady: false
+  };
+
   async _loadAssetsAsync() {
     const imageAssets = cacheImages([require("../assets/image.jpg")]);
 
