@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Text, StyleSheet, View } from "react-native";
 import { Input, Button } from "react-native-elements";
 import axios from "axios";
+import firebase from "firebase";
 import { baseUrl } from "../constant";
 class SignIn extends Component {
   state = { phone: "", code: "" };
@@ -9,10 +10,11 @@ class SignIn extends Component {
     console.log("does handle submit work in signin");
     const { phone, code } = this.state;
     try {
-      await axios.post(`${baseUrl}/verifyOneTimePassword`, {
+      let { data } = await axios.post(`${baseUrl}/verifyOneTimePassword`, {
         phone,
         code
       });
+      firebase.auth().signInWithCustomToken(data.token);
     } catch (err) {
       console.log(err);
     }
