@@ -5,20 +5,13 @@ import {
   Image,
   StyleSheet,
   Dimensions,
-  Animated,
   TouchableHighlight
 } from "react-native";
 const { height } = Dimensions.get("window");
 
 class Background extends Component {
-  buttonOpacity = new Animated.Value(1);
-
-  bgY = new Animated.Value(0);
-
   onChange = () => {
-    Animated.timing(this.bgY, {
-      toValue: -200
-    }).start();
+    this.props.navigation.navigate("signup");
   };
 
   render() {
@@ -30,7 +23,7 @@ class Background extends Component {
           justifyContent: "flex-end"
         }}
       >
-        <Animated.View
+        <View
           style={{
             ...StyleSheet.absoluteFill
           }}
@@ -39,18 +32,16 @@ class Background extends Component {
             source={require("../assets/image.jpg")}
             style={{ flex: 1, height: null, width: null }}
           />
-        </Animated.View>
+        </View>
         <View style={{ height: height / 4.5, justifyContent: "center" }}>
           <TouchableHighlight onPress={this.onChange}>
-            <Animated.View
+            <View
               style={{
-                ...styles.button,
-                opacity: this.buttonOpacity,
-                transform: [{ translateY: this.bgY }]
+                ...styles.button
               }}
             >
-              <Text style={{ fontSize: 20, fontWeight: "bold" }}>SIGN IN</Text>
-            </Animated.View>
+              <Text style={{ fontSize: 20, fontWeight: "bold" }}>SIGN UP</Text>
+            </View>
           </TouchableHighlight>
         </View>
       </View>
