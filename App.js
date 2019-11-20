@@ -4,9 +4,9 @@ import { TabNavigator, StackNavigator } from "react-navigation";
 import firebase from "firebase";
 import Background from "./components/Background";
 import MainPage from "./components/MainPage";
-import SignUp from "./components/SignUp";
+import FoodDetails from "./components/FoodDetails";
 import SignIn from "./components/SignIn";
-import Settings from "./components/Settings";
+import SignUp from "./components/SignUp";
 import Map from "./components/Map";
 export default class App extends Component {
   componentDidMount() {
@@ -23,22 +23,26 @@ export default class App extends Component {
     firebase.initializeApp(config);
   }
   render() {
-    const MainNavigator = TabNavigator({
-      welcome: { screen: Background },
-      signup: { screen: SignUp },
-      signin: { screen: SignIn },
-      main: {
-        screen: TabNavigator({
-          feeds: { screen: MainPage },
-          review: {
-            screen: StackNavigator({
-              map: { screen: Map },
-              settings: { screen: Settings }
-            })
-          }
-        })
+    const MainNavigator = TabNavigator(
+      {
+        welcome: { screen: Background },
+        signin: { screen: SignIn },
+        signup: { screen: SignUp },
+        main: {
+          screen: TabNavigator({
+            map: { screen: Map },
+            feeds: { screen: MainPage },
+            details: { screen: FoodDetails }
+          })
+        }
+      },
+      {
+        tabBarPosition: "bottom",
+        tabBarOptions: {
+          labelStyle: { fontSize: 12 }
+        }
       }
-    });
+    );
     return <MainNavigator />;
   }
 }
