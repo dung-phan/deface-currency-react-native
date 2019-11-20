@@ -24,7 +24,8 @@
     "react-native-router-flux": "^4.0.6",
     "react-native-web": "^0.11.7",
     "react-navigation": "^1.5.2",
-    "react-navigation-tabs": "^2.5.6"
+    "react-navigation-tabs": "^2.5.6",
+    "react-native-maps": "~0.25.0"
   },
   "devDependencies": {
     "babel-preset-expo": "^7.1.0"
