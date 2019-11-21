@@ -10,4 +10,5 @@ For some reasons, the app only works well on IOS. I have tested on my Android ph
 Please add two extra files that contain API keys: 
 
 service_account.json
+
 googleAPIKey.js
