@@ -7,6 +7,8 @@ This app is designed for a 3-day Hackathon event within the theme of money. I'm 
 # Install 
 
 For some reasons, the app only works well on IOS. I have tested on my Android phone but some many functionalities are missing and cause bugs. 
+To test Sign Up with phone authentication, unfortunately it only works with my phone number (due to the limitation of a free trial account).
+
 Please add two extra files that contain API keys: 
 
 service_account.json
