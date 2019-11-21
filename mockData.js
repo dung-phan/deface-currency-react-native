@@ -7,7 +7,8 @@ export default data = [
     coords: {
       longitude: 4.90087,
       latitude: 52.3442
-    }
+    },
+    update: "08:20:07"
   },
   {
     id: 2,
@@ -17,7 +18,8 @@ export default data = [
     coords: {
       longitude: 4.90087,
       latitude: 52.3442
-    }
+    },
+    update: "10:20:05"
   },
   {
     id: 3,
@@ -27,7 +29,8 @@ export default data = [
     coords: {
       longitude: 4.91247,
       latitude: 52.38369
-    }
+    },
+    update: "10:45:01"
   },
   {
     id: 4,
@@ -37,7 +40,8 @@ export default data = [
     coords: {
       longitude: 4.88216,
       latitude: 52.39299
-    }
+    },
+    update: "21:20:07"
   },
   {
     id: 5,
@@ -47,7 +51,8 @@ export default data = [
     coords: {
       longitude: 4.92421,
       latitude: 52.355518
-    }
+    },
+    update: "15:20:01"
   },
   {
     id: 6,
@@ -57,7 +62,8 @@ export default data = [
     coords: {
       longitude: 4.80432,
       latitude: 52.37899
-    }
+    },
+    update: "14:20:04"
   },
   {
     id: 7,
@@ -67,7 +73,8 @@ export default data = [
     coords: {
       longitude: 4.8331,
       latitude: 52.38816
-    }
+    },
+    update: "22:23:07"
   },
   {
     id: 8,
@@ -77,6 +84,7 @@ export default data = [
     coords: {
       longitude: 4.84544,
       latitude: 52.3792
-    }
+    },
+    update: "19:54:07"
   }
 ];

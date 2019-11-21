@@ -1,3 +1,5 @@
 node_modules/
 
 service_account.json
+
+googleAPIKey.js

@@ -1,12 +1,17 @@
 import React, { Component } from "react";
 import { Text, StyleSheet, View, Dimensions, Image } from "react-native";
 import * as Permissions from "expo-permissions";
+import { Icon } from "react-native-elements";
 import MapView, { Marker } from "react-native-maps";
 import Polyline from "@mapbox/polyline";
 import locations from "../mockData";
+import key from "../googleAPIKey";
 const { width, height } = Dimensions.get("screen");
-const key = "insert your Google API key";
 export default class Map extends Component {
+  static navigationOptions = {
+    title: "Map",
+    tabBarIcon: <Icon name="ios-pin" type="ionicon" size={30} />
+  };
   state = {
     longitude: null,
     latitude: null,
