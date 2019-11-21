@@ -19,6 +19,7 @@ class SignUp extends Component {
     } catch (err) {
       console.log(err);
     }
+    this.props.navigation.navigate("signin");
   };
   render() {
     return (
