@@ -22,6 +22,7 @@ class SignIn extends Component {
     } catch (err) {
       console.log(err);
     }
+    this.props.navigation.navigate("feeds")
   };
   render() {
     return (
