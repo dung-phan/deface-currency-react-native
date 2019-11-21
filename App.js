@@ -4,7 +4,6 @@ import { TabNavigator, StackNavigator } from "react-navigation";
 import firebase from "firebase";
 import Background from "./components/Background";
 import MainPage from "./components/MainPage";
-import FoodDetails from "./components/FoodDetails";
 import SignIn from "./components/SignIn";
 import SignUp from "./components/SignUp";
 import Map from "./components/Map";
@@ -27,12 +26,11 @@ export default class App extends Component {
       {
         welcome: { screen: Background },
         signin: { screen: SignIn },
-        signup: { screen: SignUp },
         main: {
           screen: TabNavigator({
             map: { screen: Map },
             feeds: { screen: MainPage },
-            details: { screen: FoodDetails }
+            signup: { screen: SignUp }
           })
         }
       },

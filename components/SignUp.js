@@ -1,9 +1,13 @@
 import React, { Component } from "react";
 import { Text, StyleSheet, View } from "react-native";
-import { Input, Button } from "react-native-elements";
+import { Input, Button, Icon } from "react-native-elements";
 import axios from "axios";
 import { baseUrl } from "../constant";
 class SignUp extends Component {
+  static navigationOptions = {
+    title: "Sign Up",
+    tabBarIcon: <Icon name="ios-contact" type="ionicon" size={30} />
+  };
   state = { phone: "" };
   handleSubmit = async () => {
     console.log("does handle submit work");

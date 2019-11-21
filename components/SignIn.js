@@ -1,10 +1,14 @@
 import React, { Component } from "react";
 import { Text, StyleSheet, View } from "react-native";
-import { Input, Button } from "react-native-elements";
+import { Input, Button, Icon } from "react-native-elements";
 import axios from "axios";
 import firebase from "firebase";
 import { baseUrl } from "../constant";
 class SignIn extends Component {
+  static navigationOptions = {
+    title: "Sign In",
+    tabBarIcon: <Icon name="ios-log-in" type="ionicon" size={30} />
+  };
   state = { phone: "", code: "" };
   handleSubmit = async () => {
     console.log("does handle submit work in signin");
